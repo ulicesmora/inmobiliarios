@@ -1,0 +1,16 @@
+.filtros {
+    padding-top: 2rem;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    column-gap: 5rem;
+    select {
+        // appearance: none;
+        border: none;
+        border-radius: 1rem; /* Redondear esquinas */
+        padding: 1rem; /* Añadir relleno */
+        color: $blanco;
+        background-color: $verde;
+        background-position: right center;
+    }
+}

@@ -1,0 +1,14 @@
+.buscador {
+    display: flex;
+    height: 3.5rem;
+    justify-content: center;
+    column-gap: 3rem;
+    .icono-buscar {
+        height: 3rem;
+        width: auto;
+    }
+    .entrada-buscador {
+        width: 80rem;
+        border-radius: 1rem;
+    }
+}
