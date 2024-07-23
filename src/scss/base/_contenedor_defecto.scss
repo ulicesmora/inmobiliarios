@@ -1,0 +1,21 @@
+.contenedor-defecto {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    h2 {
+        padding-bottom: 4rem;
+    }
+
+    .animacion {
+        animation-name: aparecer-desaparecer;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+    }
+
+    @keyframes aparecer-desaparecer {
+        0% { opacity: 0; }
+        50% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+}

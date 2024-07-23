@@ -55,6 +55,11 @@ class PaginasController {
         $router->render('paginas/entrada');
     }
 
+    public static function construccion(Router $router) {
+
+        $router->render('paginas/construccion');
+    }
+
     public static function contacto(Router $router) {
 
         $mensaje = null;
