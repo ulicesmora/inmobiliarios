@@ -3,10 +3,8 @@
 
         <section class="agregar-grupo">
         <a href="/construccion" class="boton-verde boton-excel">
-            <p>
                 Importar de un Excel
-            </p>
-            <img class="icono-excel" src="/build/img/excel-icon.svg" alt="icono de excel">
+            <!-- <img class="icono-excel" src="/build/img/excel-icon.svg" alt="icono de excel"> -->
         </a>
         </section>
 
