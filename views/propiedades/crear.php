@@ -6,7 +6,7 @@
             <p>
                 Importar de un Excel
             </p>
-            <img class="logo icono-excel" src="/build/img/excel-icon.svg" alt="icono de excel">
+            <img class="icono-excel" src="/build/img/excel-icon.svg" alt="icono de excel">
         </a>
         </section>
 
