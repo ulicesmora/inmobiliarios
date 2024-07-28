@@ -4,8 +4,8 @@
     align-items: center;
     row-gap: 2rem;
     padding-top: 2rem;
+    font-size: 1.8rem;
     @include tablet {
-        font-size: 1.8rem;
         flex-direction: row;
         justify-content: center;
         column-gap: 2rem;
