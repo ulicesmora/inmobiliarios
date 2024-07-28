@@ -14,7 +14,12 @@
         background-color: $verde;
         background-position: right center;
     }
-    @media (max-width: 780px) {
+    // @media (max-width: 780px) {
+    //     flex-direction: column;
+    //     align-items: center;
+    //     row-gap: 2rem;
+    // }
+    @include mobile {
         flex-direction: column;
         align-items: center;
         row-gap: 2rem;
