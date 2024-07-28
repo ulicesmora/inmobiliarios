@@ -1,9 +1,10 @@
 .filtros {
-    padding-top: 2rem;
-    font-size: 1.8rem;
-    display: flex;
-    justify-content: center;
-    column-gap: 5rem;
+        padding-top: 2rem;
+        font-size: 1.8rem;
+        display: flex;
+        justify-content: center;
+        column-gap: 5rem;
+    
     select {
         // appearance: none;
         border: none;
@@ -13,4 +14,10 @@
         background-color: $verde;
         background-position: right center;
     }
+    @media (max-width: 780px) {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 2rem;
+    }
 }
+

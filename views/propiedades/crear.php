@@ -1,6 +1,15 @@
 <main class="contenedor seccion">
         <h1>Crear</h1>
 
+        <section class="agregar-grupo">
+        <a href="/construccion" class="boton boton-verde boton-excel">
+            <p>
+                Importar de un Excel
+            </p>
+            <img class="icono-excel" src="/build/img/excel-icon.svg" alt="icono de excel">
+        </a>
+        </section>
+
         <?php foreach($errores as $error): ?>
             <div class="alerta error">
                 <?php echo $error; ?>

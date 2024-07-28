@@ -8,6 +8,10 @@
         <h3><?php echo $propiedad->titulo; ?></h3>
         <p><?php echo $propiedad->descripcion; ?></p>
         <p class="precio"><?php echo $propiedad->precio; ?></p>
+        <p>Aquí va el estado</p>
+        <p>Aquí va el municipio</p>
+        <p>Aquí va la colonia</p>
+        
 
         <ul class="iconos-caracteristicas">
             <li>
