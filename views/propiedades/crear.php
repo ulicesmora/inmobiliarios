@@ -2,7 +2,7 @@
         <h1>Crear</h1>
 
         <section class="agregar-grupo">
-        <a href="/construccion" class="boton-verde boton-excel">
+        <a href="/propiedades/importar" class="boton-verde boton-excel">
                 Importar de un Excel
             <!-- <img class="icono-excel" src="/build/img/excel-icon.svg" alt="icono de excel"> -->
         </a>

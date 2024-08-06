@@ -1,4 +1,4 @@
-<main class="contenedor seccion contenido-centrado">
+<main class="contenedor seccion display-login contenido-centrado">
         <h1>Iniciar Sesión</h1>
         <p class="descripcion-pagina">Inicia Sesión con tus datos</p>
 
@@ -10,7 +10,7 @@
  
         <form method="POST" class="formulario-login" action="/login">
             <fieldset>
-                <legend>Email y Password</legend>
+                <!-- <legend>Email y Password</legend> -->
 
                 <label for="email">E-mail</label>
                 <input type="email" name="email" placeholder="Tu Email" id="email" >

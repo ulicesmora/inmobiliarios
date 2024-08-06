@@ -8,18 +8,14 @@
     <section class="filtros">
         <form class="menu-filtros">
             <label for="estado">Estado: </label>
-            <select name="estado" id="estado">
+            <select name="estado" id="estado" class="estado">
                 <option value="default">Selecciona un Estado</option>
-                <option value="estado1">Estado 1</option>
-                <option value="estado2">Estado 2</option>
             </select>
         </form>
         <form class="menu-filtros">
             <label for="municipio">Municipio: </label>
-            <select name="municipio" id="municipio">
+            <select name="municipio" id="municipio" class="municipio">
                 <option value="default">Selecciona un Municipio</option>
-                <option value="muni1">Municipio 1</option>
-                <option value="muni2">Municipio 2</option>
             </select>
         </form>
         <form class="menu-filtros">

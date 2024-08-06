@@ -6,8 +6,21 @@
     <input type="text" id="titulo" name="propiedad[titulo]" placeholder="Titulo Propiedad" value="<?php echo s($propiedad->titulo); ?>">
 
     <label for="precio">Precio:</label>
-    <input type="number" id="precio" name="propiedad[precio]" placeholder="Precio Propiedad" value="<?php echo s($propiedad->precio); ?>">
+    <input type="number" id="precio" name="propiedad[precio]" placeholder="Precio Propiedad" min="0" value="<?php echo s($propiedad->precio); ?>">
+    
+    <label for="estado">Estado:</label>
+    <select name="propiedad[estado]" id="estado" class="estado">
+        <option value="default">Selecciona un Estado</option>
+    </select>
 
+    <label for="municipio">Municipio: </label>
+    <select name="propiedad[municipio]" id="municipio" class="municipio">
+        <option value="default">Selecciona un Municipio</option>
+    </select>
+
+    <label for="colonia">Colonia: </label>
+    <input type="text" name="propiedad[colonia]" id="colonia" placeholder="Colonia Propiedad">
+    
     <label for="imagen">Imagen:</label>
     <input type="file" id="imagen" accept="image/jpeg, image/png" name="propiedad[imagen]">
 

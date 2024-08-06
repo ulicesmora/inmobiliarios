@@ -55,6 +55,11 @@ class PaginasController {
         $router->render('paginas/entrada');
     }
 
+    // public static function importar(Router $router) {
+
+    //     $router->render('paginas/importar');
+    // }
+
     public static function construccion(Router $router) {
 
         $router->render('paginas/construccion');

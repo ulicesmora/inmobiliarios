@@ -18,14 +18,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brockers Inmobiliarios</title>
     <link rel="stylesheet" href="../build/css/app.css">
-    <link rel="shortcut icon" href="/build/img/logoPestana.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/build/img/perfil.png" type="image/x-icon">
 </head>
 <body>
     <header class="header <?php echo $inicio ? 'inicio' : ''; ?>">
         <div class="contenedor contenido-header">
             <div class="barra">
                 <a href="/">
-                    <img class="logo-header logo" src="/build/img/logoInmobiliaria.svg" alt="Logotipo de Bienes Raices">
+                    <img class="logo-header logo" src="/build/img/perfil.png" alt="Logotipo de Bienes Raices">
                 </a>
 
                 <div class="mobile-menu">
@@ -67,6 +67,7 @@
         <p class="copyright">Todos los derechos Reservados <?php echo date('Y'); ?> &copy;</p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
     <script src="../build/js/bundle.min.js"></script>
 </body>
 </html>

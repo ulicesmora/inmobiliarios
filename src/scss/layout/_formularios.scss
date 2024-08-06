@@ -50,6 +50,9 @@
     }
 }
 
+.display-login {
+    min-height: 65vh;
+}
 
 .contenedor {
     .formulario-login {
@@ -112,4 +115,8 @@
             }
         }
     }
+}
+
+.formulario-importar {
+    padding-bottom: 2rem;
 }

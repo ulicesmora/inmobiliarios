@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
    eventListeners();
    elegirModo();
    darkMode();
+   obtenerDatosJSON();
+//    mostrarEstados();
 //    darkChange();
 });
 
@@ -140,3 +142,97 @@ function mostrarMetodosContacto(e) {
         `;
     }
 }
+
+
+//función para mostrar los estados en los filtros de búsqueda
+async function obtenerDatosJSON() {
+    const url = 'https://raw.githubusercontent.com/martinciscap/json-estados-municipios-mexico/master/estados-municipios.json';
+  
+    try {
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        
+        const datos = await response.json();
+        const nombresDeEstados = Object.keys(datos); // Obtiene los nombres de los estados
+        // console.log(nombresDeEstados);
+
+        //Rellenando el select de estados
+        const select = document.querySelector(".estado");
+        nombresDeEstados.forEach(attribute => {
+            const option = document.createElement("option");
+            option.value = attribute;
+            option.textContent = attribute;
+            select.appendChild(option);
+        });
+
+        //Rellenando el select de municipios
+        select.addEventListener('change', function() {
+            const estadoSeleccionado = this.value;
+            const municipios = datos[estadoSeleccionado] || [];
+            const selectMunicipio = document.querySelector(".municipio");
+            // console.log(municipios);
+
+            // Limpia las opciones de municipios
+            selectMunicipio.innerHTML = '<option value="">Selecciona un Municipio</option>';
+
+            municipios.forEach(municipio => {
+                const option = document.createElement("option");
+                option.value = municipio;
+                option.textContent = municipio;
+                selectMunicipio.appendChild(option);
+            });
+        });
+    } catch (error) {
+        console.error('Hubo un problema con la petición Fetch:', error);
+    }
+}
+
+document.getElementById('excelFile').addEventListener('change', handleFile, false);
+
+//Con esta funcion se lee el archivo de excel
+function handleFile(e) {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        const data = new Uint8Array(event.target.result);
+        const workbook = XLSX.read(data, { type: 'array' });
+        const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+        const jsonData = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
+        appendDataToTable(jsonData);
+    };
+    reader.readAsArrayBuffer(file);
+}
+
+function displayData(data) {
+    const output = document.querySelector(".tabla-importar");
+    // console.log(output);
+    let html = '';
+    data.forEach((row) => {
+        html += '<tr>';
+        row.forEach((cell) => {
+            html += `<td>${cell}</td>`;
+        });
+        html += '</tr>';
+    });
+    output.innerHTML = html;
+}
+
+//Con esta funcion se inserta la información del archivo a la tabla en el html
+function appendDataToTable(data) {
+    const tableBody = document.querySelector('.tabla-importar').getElementsByTagName('tbody')[0];
+    data.forEach((row, rowIndex) => {
+        // Ignora la primera fila si es el encabezado
+        if (rowIndex === 0) return;
+
+        const newRow = tableBody.insertRow();
+        row.forEach((cell) => {
+            const newCell = newRow.insertCell();
+            newCell.innerHTML = `<input type="text" value="${cell}"></input>`;
+            // newCell.textContent = cell;
+        });
+    });
+}
+  

@@ -1,0 +1,21 @@
+.importacion {
+    min-height: 65vh;
+}
+.tabla-importar {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    th {
+        background-color: $grisOscuro;
+        color: white;
+        font-weight: bold;
+    }
+    th, td {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+    input[type="text"] {
+        width: 100%;
+    }    
+}
+

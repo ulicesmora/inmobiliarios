@@ -72,6 +72,11 @@ class PropiedadController {
         ]);
     }
 
+    public static function importar(Router $router) {
+
+        $router->render('propiedades/importar');
+    }
+
     public static function actualizar(Router $router) {
         
         $id = validarORedireccionar('/propiedades');

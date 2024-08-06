@@ -21,7 +21,13 @@
             </li>
         </ul>
 
+        <p>Aqui va el estado</p>
+        <p>Aqui va el municipio</p>
+        <p>Aqui va la colonia</p>
+
         <p> <?php echo $propiedad->descripcion; ?> </p>
+
+        <button class="boton boton-verde">Comprar</button>
 
         
 </main>

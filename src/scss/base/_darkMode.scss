@@ -1,7 +1,7 @@
 .dark-mode {
     background-color: darken($grisOscuro, 10);
 
-    p,td {
+    p,td, label {
         color: $blanco;
     }
 
@@ -24,6 +24,12 @@
 
     .texto-nosotros blockquote {
         color: $blanco;
+    }
+
+    .acciones {
+        a {
+            color: $blanco;
+        }
     }
 
     .formulario {

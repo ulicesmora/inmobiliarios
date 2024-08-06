@@ -6,6 +6,8 @@
 }
 
 .imagen-contacto {
+    background-color: $grisOscuro;
+    background-image: url('../img/encuentra.webp');
     background-position: center center;
     background-size: cover;
     padding: $separacion * 2 0;

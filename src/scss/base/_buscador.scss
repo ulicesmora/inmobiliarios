@@ -6,6 +6,9 @@
     .icono-buscar {
         height: 3rem;
         width: auto;
+        &:hover {
+            cursor: pointer;
+        }
     }
     .entrada-buscador {
         width: 80rem;

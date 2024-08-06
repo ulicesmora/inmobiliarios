@@ -4,7 +4,7 @@
     <?php 
         if($mensaje) { ?>
             <p class='alerta exito'><?php echo $mensaje; ?></p>;
-<?php   } ?>
+    <?php   } ?>
      
 
     <picture>
