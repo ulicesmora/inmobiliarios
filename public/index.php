@@ -7,6 +7,7 @@ use MVC\Router;
 use Controllers\PropiedadController;
 use Controllers\VendedorController;
 use Controllers\PaginasController;
+use Controllers\AdministrarController;
 
 $router = new Router();
 
@@ -37,10 +38,29 @@ $router->get('/entrada', [PaginasController::class, 'entrada']);
 $router->get('/contacto', [PaginasController::class, 'contacto']);
 $router->post('/contacto', [PaginasController::class, 'contacto']);
 $router->get('/construccion', [PaginasController::class, 'construccion']);
+$router->get('/preguntas', [PaginasController::class, 'preguntas']);
 
 //Login y Autenticación
 $router ->get('/login', [LoginController::class, 'login']);
 $router ->post('/login', [LoginController::class, 'login']);
 $router->get('/logout', [LoginController::class, 'logout']);
+
+//Recuperar Password
+$router->get('/olvide', [LoginController::class, 'olvide']);
+$router->post('/olvide', [LoginController::class, 'olvide']);
+// $router->get('/recuperar', [loginController::class, 'recuperar']);
+// $router->post('/recuperar', [loginController::class, 'recuperar']);
+
+//Crear cuenta
+$router->get('/crear-cuenta', [LoginController::class, 'crear']);
+$router->post('/crear-cuenta', [LoginController::class, 'crear']);
+
+//confirmar cuenta
+// $router->get('/confirmar-cuenta',[loginController::class, 'confirmar']);
+// $router->get('/mensaje',[loginController::class, 'mensaje']);
+
+//administrar cuenta
+$router->get('/administrar-cuenta', [AdministrarController::class, 'administrar']);
+$router->post('/administrar-cuenta', [AdministrarController::class, 'administrar']);
 
 $router->comprobarRutas();

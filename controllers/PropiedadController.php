@@ -4,6 +4,8 @@ namespace Controllers;
 use MVC\Router;
 use Model\Propiedad;
 use Model\Vendedor;
+use Model\Tipo;
+use Model\Statu;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class PropiedadController {
@@ -12,6 +14,10 @@ class PropiedadController {
         $propiedades =  Propiedad::all();
 
         $vendedores = Vendedor::all();
+
+        $tipos = Tipo::all();
+
+        $status = Statu::all();
         
         //muestra un mensaje condicional
         $resultado = $_GET['resultado'] ?? null;
@@ -19,7 +25,9 @@ class PropiedadController {
         $router->render('propiedades/admin', [
             'propiedades' => $propiedades,
             'resultado' => $resultado,
-            'vendedores' => $vendedores
+            'vendedores' => $vendedores,
+            'tipos' => $tipos,
+            'status' => $status
         ]);
     }
 
@@ -27,6 +35,8 @@ class PropiedadController {
 
         $propiedad = new Propiedad;
         $vendedores = Vendedor::all();
+        $tipos = Tipo::all();
+        $status = Statu::all();
 
         //Arreglo con mensajes de errores
         $errores = Propiedad::getErrores();
@@ -68,13 +78,71 @@ class PropiedadController {
         $router->render('propiedades/crear', [
             'propiedad' => $propiedad,
             'vendedores' => $vendedores,
-            'errores' => $errores
+            'errores' => $errores,
+            'tipos' => $tipos,
+            'status' => $status
         ]);
     }
 
     public static function importar(Router $router) {
 
-        $router->render('propiedades/importar');
+        $propiedad = new Propiedad;
+        $vendedores = Vendedor::all();
+        $tipos = Tipo::all();
+        $status = Statu::all();
+
+        //Arreglo con mensajes de errores
+        $errores = Propiedad::getErrores();
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Obtener el valor del campo de texto
+            $nombre = $_POST['total'];
+            if(!$nombre) {
+                $errores = $propiedad->validar();
+            }
+            /* Crea una nueva instancia */
+            for ($i=1; $i <= $nombre; $i++) { 
+                $propiedad = new Propiedad($_POST['propiedad'.$i]);
+                /* Subida de archivos */
+    
+                //Generar un nombre único
+                $nombreImagen = md5( uniqid( rand(), true ) ) . ".jpg";
+                
+                //Setear la imagen
+                //Realiza un resize a la imgaen con Intervention
+                // if($_FILES['propiedad']['tmp_name']['imagen']) {
+                //     $image = Image::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800, 600);
+                //     $propiedad->setImagen($nombreImagen);
+                // }
+    
+                //Validar
+                $errores = $propiedad->validar();
+    
+                //Revisar que el array de errores este vacio
+                if(empty($errores)){
+                    //Crear la carpeta par subir las imgenes
+                    // if(!is_dir(CARPETA_IMAGNES)) {
+                    //     mkdir(CARPETA_IMAGNES);
+                    // }
+    
+                    //Guardar la imagen en el servidor
+                    // $image->save(CARPETA_IMAGNES . $nombreImagen);
+    
+                    //Guarda en la base de datos
+                    $propiedad->guardar();
+                }
+            }
+
+
+        }
+
+        $router->render('propiedades/importar', [
+            'propiedad' => $propiedad,
+            'vendedores' => $vendedores,
+            'errores' => $errores,
+            'tipos' => $tipos,
+            'status' => $status
+        ]);
     }
 
     public static function actualizar(Router $router) {
@@ -84,6 +152,10 @@ class PropiedadController {
         
 
         $vendedores = Vendedor::all();
+
+        $tipos = Tipo::all();
+
+        $status = Statu::all();
 
         $errores = Propiedad::getErrores();
 
@@ -120,7 +192,9 @@ class PropiedadController {
         $router->render('/propiedades/actualizar', [
             'propiedad' => $propiedad,
             'vendedores' => $vendedores,
-            'errores' => $errores
+            'errores' => $errores,
+            'tipos' => $tipos,
+            'status' => $status
         ]);
     }
 

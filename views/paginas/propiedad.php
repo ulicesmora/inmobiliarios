@@ -21,13 +21,17 @@
             </li>
         </ul>
 
-        <p>Aqui va el estado</p>
-        <p>Aqui va el municipio</p>
-        <p>Aqui va la colonia</p>
+        <p class="propiedad-estado"><strong>Estado: </strong><?php echo $propiedad->estado; ?></p>
+        <p><strong>Municipio: </strong><?php echo $propiedad->municipio; ?></p>
+        <p><strong>Colonia: </strong><?php echo $propiedad->colonia; ?></p>
+        <?php foreach($tipos as $tipo) { ?>
+            <p><?php echo $propiedad->tipoid === $tipo->tipo_id ? "<strong>Tipo: </strong>" . s($tipo->tipo_inmueble) :  ''; ?></p>
+        <?php } ?>
+        <?php foreach($status as $statu) { ?>
+            <p><?php echo $propiedad->statusid === $statu->status_id ? "<strong>Estatus: </strong>" . s($statu->status) :  ''; ?></p>
+        <?php } ?>
 
         <p> <?php echo $propiedad->descripcion; ?> </p>
 
-        <button class="boton boton-verde">Comprar</button>
-
-        
+        <button class="boton boton-verde"><a href="/contacto">Cotizar</a></button>
 </main>

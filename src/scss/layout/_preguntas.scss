@@ -1,0 +1,18 @@
+.preguntas {
+    width: 70%;
+    margin: 0 auto;
+    h3 {
+        text-align: left;
+        margin: 0;
+        font-weight: bold;
+        line-height: 1.4;
+        &::after{
+            content: '';
+            display: block;
+            width: 15rem;
+            height: .5rem;
+            background-color: $verde;
+            margin-top: 1rem;
+        }
+    }  
+}

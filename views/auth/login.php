@@ -5,7 +5,7 @@
         <?php foreach($errores as $error): ?>
             <div class="alerta error">
                 <?php echo $error; ?>
-            </div>
+            </div> 
         <?php endforeach; ?>
  
         <form method="POST" class="formulario-login" action="/login">
@@ -23,8 +23,8 @@
         </form>
         <div class="acciones">
             <!-- <a href="/crear-cuenta">¿Aún no tienes una cuenta? Crear una</a> -->
-            <a href="/construccion">¿Aún no tienes una cuenta? Crear una</a>
-            <a href="/construccion">¿Olvidaste tu password?</a>
+            <a href="/crear-cuenta">¿Aún no tienes una cuenta? Crear una</a>
+            <a href="/olvide">¿Olvidaste tu password?</a>
             <!-- <a href="/olvide">¿Olvidaste tu password?</a> -->
         </div>
     </main>

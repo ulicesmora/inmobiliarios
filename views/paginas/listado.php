@@ -8,9 +8,15 @@
         <h3><?php echo $propiedad->titulo; ?></h3>
         <p><?php echo $propiedad->descripcion; ?></p>
         <p class="precio"><?php echo $propiedad->precio; ?></p>
-        <p>Aquí va el estado</p>
-        <p>Aquí va el municipio</p>
-        <p>Aquí va la colonia</p>
+        <p class="propiedad-estado"><strong>Estado: </strong><?php echo $propiedad->estado; ?></p>
+        <p><strong>Municipio: </strong><?php echo $propiedad->municipio; ?></p>
+        <p><strong>Colonia: </strong><?php echo $propiedad->colonia; ?></p>
+        <?php foreach($tipos as $tipo) { ?>
+            <p><?php echo $propiedad->tipoid === $tipo->tipo_id ? "<strong>Tipo: </strong>" . s($tipo->tipo_inmueble) :  ''; ?></p>
+        <?php } ?>
+        <?php foreach($status as $statu) { ?>
+            <p><?php echo $propiedad->statusid === $statu->status_id ? "<strong>Estatus: </strong>" . s($statu->status) :  ''; ?></p>
+        <?php } ?>
         
 
         <ul class="iconos-caracteristicas">

@@ -12,9 +12,9 @@
         <div class="texto-nosotros">
             <blockquote>25 Años de Experiencia</blockquote>
 
-            <p> Eum libero cupiditate consequatur nisi distinctio iste, sit enim quaerat dolorem iure et ratione omnis culpa assumenda excepturi? Deserunt molestias assumenda ullam. Repellat repellendus, qui fugit et cupiditate reprehenderit voluptate illum, adipisci in deserunt nobis animi atque omnis quam consequatur, reiciendis non doloremque dolor!  Voluptates natus consequatur explicabo ipsa, repellat libero quidem laborum delectus ducimus exercitationem rerum itaque nam nostrum sit eaque nesciunt aliquam aperiam perspiciatis? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore autem, ullam recusandae corrupti dolor soluta, omnis perspiciatis nisi ut nemo, aliquam tempora commodi cupiditate. Expedita mollitia ex et nesciunt dolore. </p>
+            <p>Bienvenidos a Brokers Inmobiliarios México AG S. C., su mejor opción para adquirir propiedades a precios inmejorables a través de remates bancarios. Con años de experiencia en el mercado inmobiliario, nos especializamos en ofrecerle oportunidades únicas para que usted pueda obtener su hogar soñado o realizar una inversión segura.</p>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iure voluptas asperiores illum! Asperiores harum provident cupiditate eius architecto, illum recusandae laudantium fugiat odio esse eum at excepturi ipsum magnam!</p>
+            <p>Nuestro equipo de expertos está comprometido con la transparencia, profesionalismo y dedicación para guiarlo en cada paso del proceso de compra. Creemos en la importancia de proporcionar un servicio personalizado para satisfacer las necesidades específicas de cada cliente. Únase a nosotros y descubra cómo puede beneficiarse de las ventajas que ofrecen los remates bancarios.</p>
         </div>
     </div><!-- contenedor -->
 </main>

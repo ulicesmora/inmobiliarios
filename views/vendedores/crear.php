@@ -1,4 +1,4 @@
-<main class="contenedor seccion">
+<main class="contenedor seccion contenedor-vendedor">
     <h1>Registrar Vendedor(a)</h1>
 
     <a href="/admin" class="boton boton-verde">Volver</a>
@@ -9,7 +9,7 @@
     </div>
     <?php endforeach; ?>
 
-    <form class="formulario" method="POST" action="/vendedores/crear">
+    <form class="formulario formulario-vendedor" method="POST" action="/vendedores/crear">
 
         <?php include 'formulario.php'; ?>
         <input type="submit" value="Registrar Vendedor(a)" class="boton boton-verde">

@@ -46,3 +46,18 @@
 .resumen-propiedad {
     padding: 1rem;
 }
+
+.contenedor {
+    button {
+        a {
+            color: #FFF;
+        }
+    }
+}
+
+.filter {
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    order: 1;
+}

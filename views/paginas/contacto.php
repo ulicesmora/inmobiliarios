@@ -19,7 +19,10 @@
         <fieldset>
             <legend>Información Personal</legend>
 
-            <label for="nombre">Nombre</label>
+            <label for="nombre">Nombre(s)</label>
+            <input type="text" placeholder="Tu Nombre" id="nombre" name="contacto[nombre]"  >
+            
+            <label for="apellido">Apellido</label>
             <input type="text" placeholder="Tu Nombre" id="nombre" name="contacto[nombre]"  >
 
             <label for="mensaje">Mensaje:</label>
@@ -29,12 +32,12 @@
         <fieldset>
             <legend>Información sobre la propiedad</legend>
 
-            <label for="opciones">Vende o Compra:</label>
+            <!-- <label for="opciones">Vende o Compra:</label>
             <select id="opciones" name="contacto[tipo]"  >
                 <option value="" disabled selected>-- Seleccione --</option>
                 <option value="Compra">Compra</option>
                 <option value="Vende">Vende</option>
-            </select>
+            </select> -->
 
             <label for="presupuesto">Precio o Presupuesto</label>
             <input min="0" type="number" placeholder="Tu Precio o Presupuesto" id="Presupuesto" name="contacto[precio]"  >

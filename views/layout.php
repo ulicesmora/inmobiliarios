@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brockers Inmobiliarios</title>
+    <title>Brokers Inmobiliarios México</title>
     <link rel="stylesheet" href="../build/css/app.css">
     <link rel="shortcut icon" href="/build/img/perfil.png" type="image/x-icon">
 </head>
@@ -25,7 +25,7 @@
         <div class="contenedor contenido-header">
             <div class="barra">
                 <a href="/">
-                    <img class="logo-header logo" src="/build/img/perfil.png" alt="Logotipo de Bienes Raices">
+                    <img class="logo-header logo" src="/build/img/logotipo.svg" alt="Logotipo de Bienes Raices">
                 </a>
 
                 <div class="mobile-menu">
@@ -38,15 +38,19 @@
                         <a href="/nosotros">Nosotros</a>
                         <a href="/propiedades">Anuncios</a>
                         <a href="/blog">Blog</a>
+                        <a href="/preguntas">Preguntas</a>
                         <a href="/contacto">Contacto</a>
+                        <?php if(!$auth):  ?>
                         <a href="/login" class="login">Login</a>
+                        <?php endif;  ?>
                         <?php if($auth): ?>
+                            <a href="/administrar-cuenta">Usuario </a>
                             <a href="/logout">Cerrar Sesión</a>
                         <?php endif; ?>
                     </nav>
                 </div>
             </div> <!-- .barra -->
-            <?php echo $inicio ? '<h1>Venta de Casas y Departamentos Las Mejores Ofertas de Remate</h>' : ''; ?>
+            <?php echo $inicio ? '<h1>Remates Bancarios: Oportunidades Inmobiliarias</h>' : ''; ?>
         </div>
     </header>
 
@@ -60,6 +64,7 @@
                 <a href="nosotros">Nosotros</a>
                 <a href="propiedades">Anuncios</a>
                 <a href="blog">Blog</a>
+                <a href="/preguntas">Preguntas</a>
                 <a href="contacto">Contacto</a>
             </nav>
         </div>

@@ -53,9 +53,16 @@
 .display-login {
     min-height: 65vh;
 }
-
+.contenedor-vendedor {
+    min-height: 65vh;
+}
 .contenedor {
+    .formulario-vendedor {
+        padding-top: 2rem;
+        padding-bottom: 5rem;
+    }
     .formulario-login {
+        min-height: 43vh;
         padding-top: 2rem;
         padding-bottom: 5rem;
     

@@ -1,0 +1,24 @@
+.contenedor-cuenta {
+    min-height: 57vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tablet {
+        @include grid(2, 2rem);
+    }
+
+    .card-opciones {
+        width: 35rem;
+        height: 15.5rem;
+        border: solid 1px $gris;
+        padding: 1rem;
+        margin: 2rem;
+        h4, p {
+            margin: 0;
+        }
+        &:hover {
+            background-color: $gris;
+            cursor: pointer;
+        }
+    }
+}

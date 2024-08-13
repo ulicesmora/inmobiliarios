@@ -7,7 +7,7 @@ use Model\ActiveRecord;
 class Propiedad extends ActiveRecord {
 
     protected static $tabla = 'propiedades';
-    protected static $columnasDB = ['id', 'titulo', 'precio', 'imagen', 'descripcion', 'habitaciones', 'wc', 'estacionamiento', 'creado', 'vendedorid'];
+    protected static $columnasDB = ['id', 'titulo', 'precio', 'imagen', 'descripcion', 'habitaciones', 'wc', 'estacionamiento', 'creado', 'vendedorid', 'municipio', 'estado', 'colonia', 'tipoid', 'statusid'];
 
     public $id;
     public $titulo;
@@ -19,6 +19,11 @@ class Propiedad extends ActiveRecord {
     public $estacionamiento;
     public $creado;
     public $vendedorid;
+    public $estado;
+    public $municipio;
+    public $colonia;
+    public $tipoid;
+    public $statusid;
 
     public function __construct($args = [])
     {
@@ -32,6 +37,11 @@ class Propiedad extends ActiveRecord {
         $this->estacionamiento = $args['estacionamiento'] ?? '';
         $this->creado = date('Y/m/d');
         $this->vendedorid = $args['vendedorid'] ?? '';
+        $this->estado = $args['estado'] ?? '';
+        $this->municipio = $args['municipio'] ?? '';
+        $this->colonia = $args['colonia'] ?? '';
+        $this->tipoid = $args['tipoid'] ?? '';
+        $this->statusid = $args['statusid'] ?? '';
     }
 
     public function validar() {
@@ -64,9 +74,29 @@ class Propiedad extends ActiveRecord {
             self::$errores[] =  'Elige un vendedor';
         }
 
-         if(!$this->imagen) {
+        if(!$this->imagen) {
              self::$errores[] = 'La imagen es obligatoria';
          }
+
+        if(!$this->estado) {
+            self::$errores[] = 'Elige un estado';
+        }
+
+        if(!$this->municipio) {
+            self::$errores[] = 'Elige un municipio';
+        }
+
+        if(!$this->colonia) {
+            self::$errores[] = 'Ingresa una colonia';
+        }
+
+        if(!$this->tipoid) {
+            self::$errores[] = 'Selecciona un tipo de propiedad';
+        }
+
+        if(!$this->statusid) {
+            self::$errores[] = 'Selecciona el status de la propiedad';
+        }
 
         return self::$errores;
     }

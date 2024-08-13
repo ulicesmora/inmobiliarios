@@ -54,4 +54,14 @@ class LoginController {
 
         header('location: /');
     }
+
+    public static function crear(Router $router) {
+
+        $router->render('auth/crear-cuenta');
+    }
+
+    public static function olvide(Router $router) {
+
+        $router->render('auth/olvide-password');
+    }
 }

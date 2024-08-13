@@ -4,6 +4,8 @@ namespace Controllers;
 
 use MVC\Router;
 use Model\Propiedad;
+use Model\Tipo;
+use Model\Statu;
 use PHPMailer\PHPMailer\PHPMailer;
 
 
@@ -11,10 +13,14 @@ class PaginasController {
     public static function index(Router $router) {
         
         $propiedades = Propiedad::get(3);
+        $tipos = Tipo::all();
+        $status = Statu::all();
         $inicio = true;
 
         $router->render('paginas/index', [
             'propiedades'=>$propiedades,
+            'tipos'=>$tipos,
+            'status'=>$status,
             'inicio'=>$inicio
         ]);
     }
@@ -27,9 +33,13 @@ class PaginasController {
     public static function propiedades(Router $router) {
 
         $propiedades = Propiedad::all();
+        $tipos = Tipo::all();
+        $status = Statu::all();
         
         $router->render('paginas/propiedades', [
-            'propiedades' => $propiedades
+            'propiedades' => $propiedades,
+            'tipos' => $tipos,
+            'status' => $status
         ]);
     }
 
@@ -39,9 +49,13 @@ class PaginasController {
 
         //Buscar la propiedad por su ID
         $propiedad = Propiedad::find($id);
+        $tipos = Tipo::all();
+        $status = Statu::all();
         
         $router->render('paginas/propiedad', [
-            'propiedad'=>$propiedad
+            'propiedad'=>$propiedad,
+            'tipos'=>$tipos,
+            'status'=>$status
         ]);
     }
 
@@ -63,6 +77,11 @@ class PaginasController {
     public static function construccion(Router $router) {
 
         $router->render('paginas/construccion');
+    }
+
+    public static function preguntas(Router $router) {
+
+        $router->render('paginas/preguntas');
     }
 
     public static function contacto(Router $router) {
